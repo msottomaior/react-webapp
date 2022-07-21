@@ -9,3 +9,11 @@ services:
     volumes:
       - /app/node_modules #not map use the folder in the container already
       - .:/app
+  react-webapp-test:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - /app/node_modules #not map use the folder in the container already
+      - .:/app
+    command: ["npm", "run", "test"]
