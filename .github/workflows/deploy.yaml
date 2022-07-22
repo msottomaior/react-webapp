@@ -16,10 +16,10 @@ jobs:
       - name: Generate deployment package
         run: zip -r deploy.zip . -x '*.git*'
 
-      - uses: actions/download-artifact@v3
+      - uses: actions/upload-artifact@v3
         with:
-          name: deploy.zip
-          path: ./public
+          name: deploy
+          path: ./deploy.zip
 
       # - name: Deploy to EB
       #   uses: einaregilsson/beanstalk-deploy@v18
